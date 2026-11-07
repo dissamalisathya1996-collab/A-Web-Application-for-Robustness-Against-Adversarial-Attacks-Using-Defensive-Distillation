@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - DeepDefendAI</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header>
+        <div class="logo">DeepDefendAI</div>
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('home') }}">Home</a></li>
+                <li><a href="{{ url_for('login') }}">Log In</a></li>
+                <li><a href="{{ url_for('signup') }}">Sign Up</a></li>
+                <li><a href="{{ url_for('view_results') }}">View Results</a></li>
+                <li><a href="{{ url_for('about') }}">About</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="about-container">
+        <h1>About DeepDefendAI</h1>
+        <p>
+            <strong>Enhancing Road Sign Recognition with Defensive Distillation for Autonomous Vehicles</strong> is a research project aimed at improving the robustness of deep learning models against adversarial attacks. By applying **Defensive Distillation**, we enhance the reliability of neural networks in real-world scenarios, ensuring safer and more accurate road sign recognition.
+        </p>
+
+        <h2>🔹 Objectives</h2>
+        <ul>
+            <li>Improve model robustness against FGSM and PGD attacks.</li>
+            <li>Compare baseline vs. distilled models in adversarial settings.</li>
+            <li>Provide real-time attack visualization through web-based tools.</li>
+        </ul>
+
+        <h2>🔹 How It Works</h2>
+        <p>
+            Our research applies **Defensive Distillation**, a technique that trains a student model using softened probabilities from a teacher model. This process makes the model more resilient to adversarial perturbations. The platform allows users to:
+        </p>
+        <ul>
+            <li>Upload road sign images and apply adversarial attacks.</li>
+            <li>Compare performance between baseline and distilled models.</li>
+            <li>Analyze model accuracy, robustness, and attack impact using interactive graphs.</li>
+        </ul>
+
+        <h2>🔹 Research Team</h2>
+        <p><strong>Researcher:</strong> Kalana Dissanayake</p>
+        <p><strong>Supervisor:</strong> Sachini Gunasekara</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 DeepDefendAI | All Rights Reserved</p>
+    </footer>
+</body>
+</html>

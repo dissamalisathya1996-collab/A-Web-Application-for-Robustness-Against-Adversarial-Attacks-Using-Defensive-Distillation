@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attack Performance - DeepDefendAI</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header>
+        <div class="logo">DeepDefendAI</div>
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('home') }}">Home</a></li>
+                <li><a href="{{ url_for('view_results') }}">Back to View Results</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="results-container">
+        <h2>Attack Performance Results</h2>
+
+        <p><strong>Attack Type:</strong> {{ attack_type }}</p>
+        <p><strong>Teacher Model Accuracy:</strong> {{ teacher_accuracy | round(2) }}%</p>
+        <p><strong>Student Model Accuracy:</strong> {{ student_accuracy | round(2) }}%</p>
+
+        <div class="progress-bar-container">
+            <div class="model-label">Teacher Model ({{ teacher_accuracy | round(2) }}%)</div>
+            <div class="progress-bar">
+                <div class="bar teacher-bar" style="--progress: {{ teacher_accuracy }}%;"></div>
+            </div>
+        </div>
+    
+        <div class="progress-bar-container">
+            <div class="model-label">Student Model ({{ student_accuracy | round(2) }}%)</div>
+            <div class="progress-bar">
+                <div class="bar student-bar" style="--progress: {{ student_accuracy }}%;"></div>
+            </div>
+        </div>
+
+        {% if visualization_image %}
+        <div class="chart-section">
+            <h3>{{ attack_type }} Attack Accuracy Chart</h3>
+            <img src="{{ url_for('static', filename=visualization_image) }}" alt="Accuracy Chart">
+        </div>
+       {% endif %}
+    </section>
+
+</body>
+</html>

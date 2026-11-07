@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Confidence Comparison - DeepDefendAI</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header>
+        <div class="logo">DeepDefendAI</div>
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('home') }}">Home</a></li>
+                <li><a href="{{ url_for('view_results') }}">Back to View Results</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="results-container">
+        <h2>Prediction Confidence Comparison Results</h2>
+
+        <p><strong>Attack Type:</strong> {{ attack_type }}</p>
+        <p><strong>Prediction Confidence Before Attack:</strong> {{ original_conf }}%</p>
+        <p><strong>Prediction Confidence After Attack:</strong> {{ attacked_conf }}%</p>
+
+        <div class="progress-bar-container">
+            <div class="model-label">Before Attack ({{ original_conf }}%)</div>
+            <div class="progress-bar">
+                <div class="bar before-bar" style="--progress: {{ original_conf }}%;"></div>
+            </div>
+        </div>
+
+        <div class="progress-bar-container">
+            <div class="model-label">After Attack ({{ attacked_conf }}%)</div>
+            <div class="progress-bar">
+                <div class="bar after-bar" style="--progress: {{ attacked_conf }}%;"></div>
+            </div>
+        </div>
+
+    <div style="text-align: center; margin-top: 30px;">
+        <h3>Confidence Comparison Chart</h3>
+        <img src="{{ url_for('static', filename= graph_filename) }}" alt="Confidence Comparison Graph" style="max-width: 500px; width: 90%; border: 1px solid #ccc; padding: 10px; border-radius: 8px;">
+    </div>
+
+        <p style="margin-top: 20px;">
+            <em>This comparison demonstrates how adversarial attacks like {{ attack_type }} can significantly reduce the model’s confidence in its predictions.</em>
+        </p>
+    </section>
+</body>
+</html>

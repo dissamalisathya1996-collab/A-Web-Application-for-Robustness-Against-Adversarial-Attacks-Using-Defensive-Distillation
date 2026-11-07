@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DeepDefendAI - Enhancing Road Sign Recognition</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <script src="JS\scripts.js"></script>
+</head>
+<body>
+    <header>
+        <div class="logo">DeepDefendAI</div>
+        {% if username %}
+        <h2 class="welcome">Welcome, {{ username }}!</h2>
+        {% endif %}
+
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('home') }}">Home</a></li>
+                <li><a href="{{ url_for('login') }}">Log In</a></li>
+                <li><a href="{{ url_for('signup') }}">Sign Up</a></li>
+                <li><a href="{{ url_for('view_results') }}">View Results</a></li>
+                <li><a href="{{ url_for('about') }}">About</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+
+    <section class="hero">
+        <h1>Enhancing Road Sign Recognition with Defensive Distillation for Autonomous Vehicles</h1>
+    </section>
+
+    <section class="welcome">
+        <div class="content-box">
+            <h2>Welcome to DeepDefendAI</h2>
+            <p class="tagline">🚗 AI Driving Assistance</p>
+            <p>
+                This platform is dedicated to improving the robustness of AI-based road sign recognition systems using defensive distillation. By implementing advanced techniques, we enhance model resilience against adversarial attacks, ensuring safe and accurate road sign detection for autonomous vehicles.
+            </p>
+            <h3>Project Overview</h3>
+            <p>
+                RobustAI Lab focuses on integrating deep learning innovations with intelligent transportation systems, making AI-driven road signage recognition more efficient and secure.
+            </p>
+            <a href="#" class="btn">Learn More</a>
+        </div>
+    </section>
+</body>
+</html>

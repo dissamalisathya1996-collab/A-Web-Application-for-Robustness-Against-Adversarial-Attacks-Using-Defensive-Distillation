@@ -1,0 +1,16 @@
+flask==2.2.5
+tensorflow
+numpy
+Pillow
+h5py
+pymongo
+scikit-learn 
+fastapi
+gunicorn
+flask-mongoengine==1.0.0
+keras
+pandas
+seaborn
+opencv-python
+foolbox
+Flask-Session

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - DeepDefendAI</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header>
+        <div class="logo">DeepDefendAI</div>
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('home') }}">Home</a></li>
+                <li><a href="{{ url_for('login') }}">Log In</a></li>
+                <li><a href="{{ url_for('signup') }}">Sign Up</a></li>
+                <li><a href="{{ url_for('view_results') }}">View Results</a></li>
+                <li><a href="{{ url_for('about') }}">About</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="auth-container">
+        <div class="auth-box">
+            <h2>Sign Up</h2>
+            <form action="{{ url_for('signup') }}" method="POST">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" name="name" required>
+            
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+            
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required>
+            
+                <label for="confirm-password">Confirm Password</label>
+                <input type="password" id="confirm-password" name="confirm-password" required>
+            
+                <button type="submit" class="btn">Sign Up</button>
+                <p>Already have an account? <a href="{{ url_for('login') }}">Log In</a></p>
+            
+                {% if error_message %}
+                    <p style="color:red;">{{ error_message }}</p>
+                {% endif %}
+            </form>
+            
+        </div>
+    </section>
+
+    <script>
+        document.getElementById("signup-form").addEventListener("submit", async function(event) {
+            event.preventDefault();
+
+            let name = document.getElementById("name").value;
+            let email = document.getElementById("email").value;
+            let password = document.getElementById("password").value;
+
+            let response = await fetch("{{ url_for('signup') }}", { 
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ name, email, password })  
+            });
+
+            let data = await response.json();
+
+            if (response.ok) {
+                alert("Registration Successful! Please log in.");
+                window.location.href = "{{ url_for('login') }}";
+            } else {
+                alert(data.error);
+            }
+        });
+    </script>
+</body>
+</html>

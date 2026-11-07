@@ -1,0 +1,480 @@
+/* General Styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: url('background.jpg') no-repeat center center/cover;
+    color: white;
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: black;
+    padding: 15px 50px;
+}
+
+.logo {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    padding: 60px 20px;
+    background: rgba(0, 0, 0, 0.7);
+}
+
+.hero h1 {
+    font-size: 24px;
+    color: cyan;
+}
+
+/* Content Box */
+.welcome {
+    display: flex;
+    justify-content: center;
+    margin: 30px;
+}
+
+.content-box {
+    background: rgba(0, 0, 0, 0.8);
+    padding: 30px;
+    max-width: 600px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.tagline {
+    background: black;
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+h2, h3 {
+    color: cyan;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background: cyan;
+    color: black;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .content-box {
+        width: 90%;
+    }
+    
+    header {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+/* Authentication Pages */
+.auth-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.7);
+}
+
+.auth-box {
+    background: rgba(0, 0, 0, 0.8);
+    padding: 30px;
+    width: 350px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.auth-box h2 {
+    color: cyan;
+    margin-bottom: 20px;
+}
+
+.auth-box label {
+    display: block;
+    text-align: left;
+    margin: 10px 0 5px;
+    font-weight: bold;
+}
+
+.auth-box input {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+.auth-box .btn {
+    width: 100%;
+    padding: 10px;
+    background: cyan;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.auth-box p {
+    margin-top: 10px;
+}
+
+.auth-box a {
+    color: cyan;
+    text-decoration: none;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .auth-box {
+        width: 90%;
+    }
+}
+
+/* Smooth Page Load Transition */
+body {
+    animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.results-container, .comparison-container, .graph-container, .image-container {
+    text-align: center;
+    padding: 50px;
+    color: white;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.btn {
+    padding: 15px 30px;
+    background: cyan;
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+.btn:hover {
+    background: white;
+    color: black;
+}
+
+/* Table Styling */
+table {
+    width: 50%;
+    margin: 20px auto;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid cyan;
+    padding: 15px;
+    text-align: center;
+}
+
+th {
+    background: cyan;
+    color: black;
+}
+
+/* Image and Graph Styling */
+.image-container img, .graph-container img {
+    width: 45%;
+    margin: 10px;
+    border: 2px solid cyan;
+    border-radius: 10px;
+}
+
+.image-pair {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .button-container {
+        flex-direction: column;
+    }
+
+    table {
+        width: 90%;
+    }
+
+    .image-container img, .graph-container img {
+        width: 90%;
+    }
+
+    .image-pair {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+.upload-section {
+    text-align: center;
+    padding: 50px;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    margin-top: 20px;
+    border-radius: 10px;
+}
+
+.upload-section h2 {
+    font-size: 1.8em;
+    margin-bottom: 15px;
+}
+
+.upload-section label {
+    font-size: 1.2em;
+    display: block;
+    margin-top: 10px;
+}
+
+.upload-section input,
+.upload-section select {
+    width: 50%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid cyan;
+    background: black;
+    color: white;
+}
+
+.upload-section .btn {
+    padding: 15px 30px;
+    background: cyan;
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 15px;
+}
+
+.upload-section .btn:hover {
+    background: white;
+    color: black;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .upload-section input,
+    .upload-section select {
+        width: 90%;
+    }
+}
+
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Body Styling */
+body {
+    background-color: #0f0f0f;
+    color: #ffffff;
+    line-height: 1.6;
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #121212;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #00aaff;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #00aaff;
+}
+
+/* About Page Container */
+.about-container {
+    max-width: 900px;
+    margin: 50px auto;
+    padding: 20px;
+    background: #1a1a1a;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 170, 255, 0.3);
+}
+
+.about-container h1 {
+    text-align: center;
+    color: #00aaff;
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.about-container p {
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+.about-container h2 {
+    color: #00aaff;
+    font-size: 24px;
+    margin-top: 20px;
+}
+
+.about-container ul {
+    margin: 10px 0;
+    padding-left: 20px;
+}
+
+.about-container ul li {
+    font-size: 18px;
+    margin-bottom: 8px;
+    list-style-type: disc;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    background: #121212;
+    padding: 15px;
+    font-size: 16px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+.progress-bar-container {
+    margin: 20px 0;
+}
+
+.model-label {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.progress-bar {
+    background-color: #eee;
+    border-radius: 10px;
+    height: 25px;
+    width: 100%;
+    overflow: hidden;
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.2);
+}
+
+.bar {
+    height: 100%;
+    width: var(--progress);
+    transition: width 0.6s ease;
+    border-radius: 10px;
+}
+
+.teacher-bar {
+    background-color: crimson;
+}
+
+.student-bar {
+    background-color: seagreen;
+}
+
+
+.progress-bar-container {
+    margin-bottom: 20px;
+}
+
+.model-label {
+    color: #f4efef; /* Or any dark color */
+    font-weight: bold;
+    font-size: 16px;
+    margin-bottom: 8px;
+    text-align: center;
+}
+
+.progress-bar {
+    background-color: #e0e0e0;
+    border-radius: 10px;
+    height: 20px;
+    width: 100%;
+    overflow: hidden;
+}
+
+.bar {
+    height: 100%;
+    border-radius: 10px;
+    background-color: #4CAF50; /* Green for before attack */
+    width: var(--progress);
+}
+
+.before-bar {
+    background-color: #4CAF50; /* Green */
+}
+
+.after-bar {
+    background-color: #f44336; /* Red */
+}

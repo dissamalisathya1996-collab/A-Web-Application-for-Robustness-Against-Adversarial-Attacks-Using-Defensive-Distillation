@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Results - DeepDefendAI</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header>
+        <div class="logo">DeepDefendAI</div>
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('home') }}">Home</a></li>
+                <li><a href="{{ url_for('login') }}">Log In</a></li>
+                <li><a href="{{ url_for('signup') }}">Sign Up</a></li>
+                <li><a href="{{ url_for('view_results') }}">View Results</a></li>
+                <li><a href="{{ url_for('about') }}">About</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="upload-section">
+        <h2>Upload an Image & Select Attack Type</h2>
+        <form id="attackForm" action="{{ url_for('view_results') }}" method="POST" enctype="multipart/form-data">
+            <label for="imageUpload">Select an image:</label>
+            <input type="file" id="imageUpload" name="imageUpload" accept="image/*" required>
+        
+            <label for="attackType">Choose Attack Type:</label>
+            <select id="attackType" name="attackType">
+                <option value="fgsm">FGSM Attack</option>
+                <option value="pgd">PGD Attack</option>
+            </select>
+        
+            <button type="submit" class="btn">Generate Results</button>
+        </form>
+        
+    </section>
+
+    <section class="results-container">
+        {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+        <div class="message-block">
+        {% for category, message in messages %}
+            <p class="{{ category }}">{{ message }}</p>
+        {% endfor %}
+        </div>
+    {% endif %}
+         {% endwith %}
+        <h2>View Model Performance</h2>
+        <div class="button-container">
+            <button class="btn" onclick="window.location.href='/confidence_comparison'">Confidence Comparison</button>
+            <button class="btn" onclick="window.location.href='/attack_performance'">Attack Performance</button>
+            <button class="btn" onclick="window.location.href='/model_comparison'">Model Comparison</button>
+
+
+        </div>
+    </section>
+
+</body>
+</html>

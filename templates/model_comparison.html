@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Model Comparison - DeepDefendAI</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header>
+        <div class="logo">DeepDefendAI</div>
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('home') }}">Home</a></li>
+                <li><a href="{{ url_for('view_results') }}">Back to View Results</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="comparison-container">
+        <h2>Baseline vs Distilled Model Accuracy</h2>
+        {% if success %}
+    <p class="success-message">{{ success }}</p>
+        {% endif %}
+        <table>
+            <tr>
+                <th>Model</th>
+                <th>Accuracy</th>
+            </tr>
+            <tr>
+                <td>Baseline Model</td>
+                <td>{{ teacher_acc }}%</td>
+            </tr>
+            <tr>
+                <td>Distilled Model</td>
+                <td>{{ student_acc }}%</td>
+            </tr>
+        </table>
+        <div class="chart">
+            <img src="{{ chart_path }}" alt="accuracy_comparison" width="600">
+        </div>
+    </section>
+</body>
+</html>
